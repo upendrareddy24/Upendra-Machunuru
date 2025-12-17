@@ -250,8 +250,9 @@ h1 {
 
 /* Cards & Grid */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -265,6 +266,13 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100%;
+
+}
+
+.grid-container .card {
+    flex: 0 1 350px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .card:hover {
@@ -374,8 +382,9 @@ h1 {
 
 /* Skills Tags */
 .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -438,6 +447,12 @@ h1 {
     left: 0;
     color: var(--secondary);
     font-weight: 800;
+}
+
+.skill-category {
+    flex: 0 1 350px;
+    width: 100%;
+    max-width: 400px;
 }
 
 .contact-mini {
