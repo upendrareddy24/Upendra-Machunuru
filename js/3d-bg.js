@@ -1,5 +1,7 @@
 
-import * as THREE from 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.js';
+// Three.js is loaded globally via CDN in index.html, so we don't need to import it here.
+// const THREE = window.THREE; // Implicitly available
+
 
 // Scene Setup
 const canvas = document.querySelector('#bg-canvas');
