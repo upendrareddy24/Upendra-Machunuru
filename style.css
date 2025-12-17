@@ -250,8 +250,9 @@ h1 {
 
 /* Cards & Grid */
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -265,6 +266,8 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100%;
+    flex: 1 1 300px;
+    max-width: 400px;
 }
 
 .card:hover {
