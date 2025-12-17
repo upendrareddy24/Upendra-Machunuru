@@ -432,6 +432,44 @@ footer {
     color: var(--text-muted);
 }
 
+/* Credentials */
+.credential-card {
+    text-align: center;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.cert-meta {
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.btn-text {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px dashed var(--primary);
+    padding-bottom: 2px;
+    transition: all 0.3s;
+}
+
+.btn-text:hover {
+    color: var(--primary);
+    border-bottom-style: solid;
+}
+
+.btn-linkedin {
+    background: #0077b5;
+    color: white;
+    border: none;
+}
+
+.btn-linkedin:hover {
+    background: #005582;
+    transform: translateY(-2px);
+}
+
 /* Animations */
 .hidden-anim {
     opacity: 0;
