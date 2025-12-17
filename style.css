@@ -529,7 +529,42 @@ footer {
         padding-left: 30px;
     }
 
+
     .timeline-dot {
         left: -9px;
     }
+}
+
+/* Smart Tooltips */
+.tech-tooltip {
+    position: absolute;
+    background: rgba(10, 10, 20, 0.95);
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    max-width: 400px;
+    z-index: 2000;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tech-tooltip.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tech-tooltip strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.3rem;
 }
