@@ -19,14 +19,20 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Executive Tier: Three.js & GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-    <div class="background-globes">
-        <div class="globe globe-1"></div>
-        <div class="globe globe-2"></div>
-        <div class="globe globe-3"></div>
-    </div>
+    <canvas id="bg-canvas"></canvas>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -280,19 +286,45 @@
         <p>Senior Functional Safety & Sites Engineering</p>
     </footer>
 
+    <script src="js/3d-bg.js"></script>
     <script>
-        // Simple Intersection Observer for scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
 
-        document.querySelectorAll('.card, .section-title, .timeline-item').forEach((el) => {
-            el.classList.add('hidden-anim');
-            observer.observe(el);
+        // Hero Animation
+        gsap.from(".hero-content", {
+            duration: 1.5,
+            y: 100,
+            opacity: 0,
+            ease: "power4.out"
+        });
+
+        // Section Headers
+        gsap.utils.toArray(".section-title").forEach(title => {
+            gsap.from(title, {
+                scrollTrigger: {
+                    trigger: title,
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 1
+            });
+        });
+
+        // Cards Stagger
+        gsap.utils.toArray(".grid-container").forEach(grid => {
+            gsap.from(grid.children, {
+                scrollTrigger: {
+                    trigger: grid,
+                    start: "top 85%"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2
+            });
         });
 
         // Toggle Mobile Menu
