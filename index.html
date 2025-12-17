@@ -434,12 +434,15 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // Hero Animation
+        // Hero Animation - Disabled to prevent visibility issues
+        /*
         gsap.from(".hero-content", {
             duration: 1.5,
             y: 100,
             opacity: 0,
             ease: "power4.out"
         });
+        */
 
         // Section Headers
         gsap.utils.toArray(".section-title").forEach(title => {
