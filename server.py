@@ -5,12 +5,8 @@ import os
 
 app = FastAPI()
 
-# Mount static files (css, js, images if any)
-app.mount("/static", StaticFiles(directory="."), name="static")
-
-@app.get("/")
-async def read_index():
-    return FileResponse('index.html')
+# Mount the entire current directory to serve index.html and assets from root
+app.mount("/", StaticFiles(directory=".", html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn
