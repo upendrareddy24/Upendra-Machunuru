@@ -249,6 +249,9 @@ h1 {
     padding: 2rem;
     border-radius: 16px;
     transition: transform 0.3s, background 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
@@ -340,6 +343,10 @@ h1 {
     color: var(--primary);
 }
 
+.tech-stack-mini {
+    margin-top: auto;
+}
+
 .tech-stack-mini span {
     display: inline-block;
     padding: 2px 8px;
@@ -348,6 +355,8 @@ h1 {
     font-size: 0.75rem;
     margin-right: 5px;
     color: #fff;
+    margin-top: auto;
+    /* Ensure it sticks to bottom if in flex container */
 }
 
 /* Skills Tags */
@@ -452,6 +461,9 @@ footer {
     border-bottom: 1px dashed var(--primary);
     padding-bottom: 2px;
     transition: all 0.3s;
+    margin-top: auto;
+    align-self: center;
+    /* Center the button horizontally */
 }
 
 .btn-text:hover {
